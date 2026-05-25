@@ -381,28 +381,42 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50 pb-8">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3">
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" fill="currentColor" />
-            <span className="font-bold text-lg sm:text-xl text-gray-900">PulseCardiology Admin</span>
-          </Link>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <span className="text-xs sm:text-sm text-gray-600">
-              Welcome, <strong className="text-gray-900">{adminName}</strong>
-            </span>
-            <button
-              onClick={handleLogout}
-              className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 transition flex items-center gap-1 sm:gap-2 text-sm sm:text-base"
-            >
-              <LogOut className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span className="hidden sm:inline">Logout</span>
-              <span className="sm:hidden">Exit</span>
-            </button>
-          </div>
-        </div>
-      </header>
+ <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3">
+    
+    {/* Left Side */}
+    <Link href="/" className="flex items-center gap-2 min-w-0">
+      <Heart
+        className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 shrink-0"
+        fill="currentColor"
+      />
+
+      <span className="font-bold text-base sm:text-xl text-gray-900 truncate">
+        PulseCardiology Admin
+      </span>
+    </Link>
+
+    {/* Right Side */}
+    <div className="flex items-center gap-2 sm:gap-4 shrink-0 ml-auto">
+      
+      {/* Welcome Text */}
+      <span className="hidden md:block text-sm text-gray-600 whitespace-nowrap">
+        Welcome, <strong className="text-gray-900">{adminName}</strong>
+      </span>
+
+      {/* Logout Button */}
+      <button
+        onClick={handleLogout}
+        className="px-3 py-2 sm:px-4 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 transition flex items-center gap-2 text-sm"
+      >
+        <LogOut className="w-4 h-4" />
+
+        <span className="hidden sm:inline">Logout</span>
+        <span className="sm:hidden">Exit</span>
+      </button>
+    </div>
+  </div>
+</header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 lg:py-12">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
